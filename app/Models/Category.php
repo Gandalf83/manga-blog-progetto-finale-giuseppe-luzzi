@@ -9,11 +9,10 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $guarded = [];
 
-    // Ogni categoria può avere tanti fumetti
-    public function comics()
+    public function mangas()
     {
-        return $this->hasMany(Comic::class);
+        return $this->hasMany(Manga::class);
     }
 }

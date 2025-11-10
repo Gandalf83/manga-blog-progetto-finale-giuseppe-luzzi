@@ -10,10 +10,11 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            ['name' => 'Avventura'],
-            ['name' => 'Commedia'],
-            ['name' => 'Azione'],
-            ['name' => 'Dramma'],
+            ['name' => 'Shonen'],
+            ['name' => 'Shojo'],
+            ['name' => 'Seinen'],
+            ['name' => 'Josei'],
+            ['name' => 'Kodomo'],
         ]);
     }
 }

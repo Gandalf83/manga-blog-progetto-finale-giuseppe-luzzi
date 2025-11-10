@@ -8,15 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('mangas', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('title');
+            $table->string('author');
+            $table->integer('year');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('mangas');
     }
 };

@@ -4,30 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category; // 🔹 aggiunto import corretto
 
 class Manga extends Model
 {
     use HasFactory;
 
-    protected $table = 'comics'; // nome tabella nel database
-
+    // Campi riempibili (per form, seeder, ecc.)
     protected $fillable = [
         'title',
-        'plot',
-        'number',
+        'author',
+        'description',
         'year',
-        'cover',
+        'image',
         'category_id',
-        'user_id',
     ];
 
-    // Relazione: un fumetto appartiene a un utente (fumettista)
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    // Relazione: un fumetto appartiene a una categoria
+    // Relazione: un Manga appartiene a una Category
     public function category()
     {
         return $this->belongsTo(Category::class);
